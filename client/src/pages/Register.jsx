@@ -16,7 +16,7 @@ const Register = () => {
                 toast.error(response.data.error);
             } else {
                 if (response.data.giftApplied) {
-                    toast.success('🎉 $100 Bonus Activated!', { icon: '💰' });
+                    toast.success('🎉 $3,000 Bonus Activated!', { icon: '💰' });
                 }
                 toast.success('Account Created!');
                 navigate('/login');

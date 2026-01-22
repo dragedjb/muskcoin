@@ -161,7 +161,7 @@ const promoData = [
                 <tr className="border-b border-white/5">
                   <td className="px-8 py-4 text-blue-400">dav***09</td>
                   <td className="px-8 py-4 text-slate-400">Bonus Drop</td>
-                  <td className="px-8 py-4 text-right text-green-400">+$100.00</td>
+                  <td className="px-8 py-4 text-right text-green-400">+$1010.00</td>
                 </tr>
               </tbody>
             </table>

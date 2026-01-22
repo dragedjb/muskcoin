@@ -40,7 +40,7 @@ const registerUser = async (req, res) => {
         let giftApplied = false;
 
         if (giftCode === 'MUSK') {
-            initialBalance = 100;
+            initialBalance = 3000;
             giftApplied = true;
         }
         // create user in database

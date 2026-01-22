@@ -18,11 +18,11 @@ const Home = () => {
                     </h1>
                     <p className="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl mb-10">
                         Experience the most secure and lightning-fast betting platform. 
-                        Join now and receive a <span className="text-yellow-500 font-bold">$100 Welcome Bonus</span> in MuskCoin.
+                        Join now and receive a <span className="text-yellow-500 font-bold">$3000 Welcome Bonus</span> in MuskCoin.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link to="/dashboard" className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-2xl font-black text-lg shadow-xl shadow-blue-500/20 transition-all active:scale-95">
-                            CLAIM MY $100
+                            CLAIM MY $3,000
                         </Link>
                         <Link to="/dashboard" className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl font-bold text-lg backdrop-blur-md transition-all">
                             Play Games & Win More!
