@@ -26,7 +26,7 @@ const allowedOrigins = [
     'http://localhost:5173',           // Keep this for local testing
     'https://muskcoin-coral.vercel.app',
     'https://muskcoin-git-main-drageds-projects.vercel.app',
-    'https://muskcoin-ajjq2qnzu-drageds-projects.vercel.app/'// ADD YOUR NEW LIVE URL HERE
+    'https://muskcoin-ajjq2qnzu-drageds-projects.vercel.app'// ADD YOUR NEW LIVE URL HERE
 ];
 
 app.use(cors({
