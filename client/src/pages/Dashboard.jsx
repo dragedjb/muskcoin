@@ -40,7 +40,7 @@ const promoData = [
 
   if (!ready) return (
     <div className="min-h-screen bg-[#020617] flex items-center justify-center text-white font-black tracking-widest">
-      INITIALIZING SECURE SESSION...
+      MUSKCOIN SESSION...
     </div>
   );
 
@@ -72,7 +72,7 @@ const promoData = [
         {/* User Welcome Row */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
           <div>
-            <h2 className="text-4xl font-black tracking-tighter">Control Center</h2>
+            <h2 className="text-4xl font-black tracking-tighter">MuskCoin Dashboard</h2>
             <p className="text-slate-500 font-bold uppercase text-xs tracking-widest">
               Live Terminal <span className="text-blue-500 ml-2">@{user?.name}</span>
             </p>
@@ -86,16 +86,16 @@ const promoData = [
         {/* TOP ROW: BALANCE & SLIDING CARDS */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
           {/* BALANCE CARD */}
-          <div className="lg:col-span-2 relative overflow-hidden bg-gradient-to-br from-blue-700 to-indigo-900 rounded-[2.5rem] p-10 border-4 border-white/10 shadow-2xl">
+          <div className="lg:col-span-2 relative overflow-hidden bg-gradient-to-br from-blue-700 to-indigo-900 rounded-[2.5rem] p-6 lg:p-10 border-4 border-white/10 shadow-2xl">
             <div className="relative z-10">
               <p className="text-blue-200 text-xs font-black uppercase tracking-widest mb-2 opacity-70">Net Assets</p>
-              <h3 className="text-6xl font-black tracking-tighter mb-8">
+              <h3 className="text-3xl md:text-4xl lg:text-6xl font-black tracking-tighter mb-8">
                 ${user?.balance?.toLocaleString()}
               </h3>
               <div className="flex gap-4">
-                <Link to='/withdraw'><button className="bg-white text-blue-900 px-8 py-3 rounded-2xl font-black text-sm hover:bg-blue-50 transition-all">DEPOSIT</button></Link>
+                <Link to='/withdraw'><button className="bg-white text-blue-900 px-6 py-2 lg:px-8 lg:py-3 rounded-2xl font-black text-sm hover:bg-blue-50 transition-all">DEPOSIT</button></Link>
                 
-                <Link to='/withdraw'><button className="bg-black/20 border border-white/20 px-8 py-3 rounded-2xl font-black text-sm hover:bg-black/40 transition-all">WITHDRAW</button></Link>
+                <Link to='/withdraw'><button className="bg-black/20 border border-white/20 px-6 py-2 lg:px-8 lg:py-3 rounded-2xl font-black text-sm hover:bg-black/40 transition-all">WITHDRAW</button></Link>
               </div>
             </div>
             <img src="/logo.png" className="absolute -right-10 -bottom-10 w-64 h-64 opacity-10 rotate-12 pointer-events-none" />
@@ -139,29 +139,44 @@ const promoData = [
           </div>
 
           {/* LIVE WINNINGS TABLE */}
-          <div className="lg:col-span-2 bg-[#0b1120] border-2 border-white/10 rounded-[2rem] overflow-hidden shadow-2xl">
-            <div className="px-8 py-5 border-b border-white/10 bg-white/5 flex justify-between items-center">
-              <h3 className="font-black text-sm uppercase tracking-widest">Live Network Payouts</h3>
+          <div className="lg:col-span-2 bg-[#0b1120] border-2 border-white/10 rounded-[1rem] overflow-hidden shadow-2xl">
+            <div className="px-6 py-3 lg:px-8 lg:py-5 border-b border-white/10 bg-white/5 flex justify-between items-center">
+              <h3 className="font-black text-sm uppercase tracking-widest">Live MuskCoin Payouts!</h3>
               <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
             </div>
             <table className="w-full">
               <thead className="bg-white/5 text-[10px] font-black text-slate-500 uppercase">
                 <tr>
-                  <th className="px-8 py-4 text-left">User</th>
-                  <th className="px-8 py-4 text-left">Source</th>
-                  <th className="px-8 py-4 text-right">Amount</th>
+                  <th className="px-6 py-4 text-left">User</th>
+                  <th className="px-6 py-4 text-left">Source</th>
+                  <th className="px-6 py-4 text-left">Amount</th>
                 </tr>
               </thead>
               <tbody className="text-sm font-bold">
                 <tr className="border-b border-white/5">
-                  <td className="px-8 py-4 text-blue-400">mik***42</td>
-                  <td className="px-8 py-4 text-slate-400">Crypto Crash</td>
-                  <td className="px-8 py-4 text-right text-green-400">+$1,240.50</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-blue-400">mik***42</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-slate-400">Musk Bonus</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-left text-green-400">+$3,240.50</td>
                 </tr>
                 <tr className="border-b border-white/5">
-                  <td className="px-8 py-4 text-blue-400">dav***09</td>
-                  <td className="px-8 py-4 text-slate-400">Bonus Drop</td>
-                  <td className="px-8 py-4 text-right text-green-400">+$1010.00</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-blue-400">dav***09</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-slate-400">Musk Bonus</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-left text-green-400">+$3,110.00</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-blue-400">gil***rt</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-slate-400">Dodge Game</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-left text-green-400">+$1,010.00</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-blue-400">hum***y</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-slate-400">Crypto Crash</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-left text-green-400">+$1,500.00</td>
+                </tr>
+                <tr className="border-b border-white/5">
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-blue-400">jos***ne</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-slate-400">Musk Bonus</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-left text-green-400">+$3,070.00</td>
                 </tr>
               </tbody>
             </table>
@@ -206,6 +221,7 @@ const promoData = [
 
         {/* SPONSORS FOOTER */}
         <footer className="mt-20 py-10 border-t border-white/5 flex flex-col items-center">
+        <img src="/logo.png" alt="MuskCoin" className="w-12 h-12 group-hover:rotate-12 transition-transform duration-300" />
           <p className="text-slate-600 text-[10px] font-black uppercase tracking-[0.4em] mb-8">Institutional Partners</p>
           <div className="flex flex-wrap justify-center gap-10 opacity-20 grayscale">
             {sponsors.map(s => (
@@ -216,7 +232,7 @@ const promoData = [
       </main>
 
       {/* MOBILE BOTTOM TABS - Floating, Thick Glowing Glassy Border */}
-      <nav className="lg:hidden fixed bottom-6 left-6 right-6 bg-[#0f172a]/80 backdrop-blur-2xl border-[4px] border-blue-500/50 rounded-[2rem] px-8 py-4 flex justify-between z-50 shadow-[0_10px_40px_rgba(59,130,246,0.3)] ring-1 ring-white/20">
+      <nav className="lg:hidden fixed bottom-3 left-3 right-3 lg:bottom-6 lg:left-6 lg:right-6 bg-[#0f172a]/80 backdrop-blur-2xl border-[4px] border-blue-500/50 rounded-[2rem] px-5 py-2 lg:px-8 lg:py-4 flex justify-between z-50 shadow-[0_10px_40px_rgba(59,130,246,0.3)] ring-1 ring-white/20">
         {navItems.map(item => (
           <button key={item.label} className="flex flex-col items-center gap-1">
             <span className="text-2xl drop-shadow-[0_0_8px_rgba(59,130,246,0.6)]">{item.icon}</span>

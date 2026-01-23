@@ -72,6 +72,7 @@ const Home = () => {
 
       {/* Sponsors Footer */}
       <footer className="border-t border-white/5 bg-[#0b1120] py-12 px-6">
+      <img src="/logo.png" alt="MuskCoin" className="w-12 h-12 group-hover:rotate-12 transition-transform duration-300" />
         <div className="max-w-7xl mx-auto flex flex-col items-center">
           <p className="text-slate-500 text-xs font-bold uppercase mb-8 tracking-[0.3em]">Official Partners</p>
           <div className="flex flex-wrap justify-center gap-12 opacity-30 grayscale hover:grayscale-0 transition-all">

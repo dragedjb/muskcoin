@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#1e1b4b]/95 backdrop-blur-lg border-b border-white/10 px-10 py-2">
+    <nav className="sticky top-0 z-50 bg-[#1e1b4b]/95 backdrop-blur-lg border-b border-white/10 px-5 py-1">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* LEFT: LOGO */}
@@ -96,7 +96,7 @@ const Navbar = () => {
           ) : (
             <div className="flex items-center gap-4">
               <Link to="/login" className="text-slate-400 hover:text-white font-bold text-sm">SIGN IN</Link>
-              <Link to="/register" className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-lg transition-all active:scale-95">
+              <Link to="/register" className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-2 rounded-xl font-bold text-sm shadow-lg transition-all active:scale-95">
                 SIGN UP
               </Link>
             </div>

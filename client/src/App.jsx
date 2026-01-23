@@ -30,8 +30,9 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/dashboard' element={<Dashboard />} />
         
-        <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        {/* <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} /> */}
         <Route path='/withdraw' element={<ProtectedRoute><Withdraw /></ProtectedRoute>} />
       </Routes>
     </UserContextProvider>
