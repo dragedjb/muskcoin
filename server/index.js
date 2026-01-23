@@ -20,7 +20,24 @@ app.use(helmet({
     contentSecurityPolicy: false,
 }));
 
+// --- CORS CONFIGURATION ---
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://muskcoin-coral.vercel.app' // Your future live URL
+];
+
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true
+}));
+
 app.use('/', require('./routes/authRoutes'))
 
-const port = 8000
+const port = process.env.PORT || 8000
 app.listen(port, ()=> console.log(`server is running on port ${port}`))
