@@ -3,9 +3,7 @@ import { createContext, useState, useEffect } from 'react';
 
 // 1. Configure the API instance (Handles switching between Render and Localhost)
 const API = axios.create({
-    baseURL: import.meta.env.PROD 
-        ? 'https://your-server-on-render.onrender.com' // <-- Replace with your actual Render URL
-        : 'http://localhost:8000', // Matches your backend port
+    baseURL: import.meta.env.VITE_API_URL,
     withCredentials: true
 });
 
