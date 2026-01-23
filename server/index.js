@@ -31,16 +31,23 @@ const allowedOrigins = [
 
 app.use(cors({
     origin: function (origin, callback) {
-        // Allow requests with no origin (like mobile apps)
+        // 1. Allow requests with no origin (like mobile apps or Postman)
         if (!origin) return callback(null, true);
-        
-        if (allowedOrigins.indexOf(origin) !== -1 || origin.includes(".vercel.app")) {
+
+        // 2. Check if origin is in our list OR is a vercel.app subdomain
+        const isAllowed = allowedOrigins.includes(origin) || 
+                         origin.endsWith('.vercel.app');
+
+        if (isAllowed) {
             callback(null, true);
         } else {
+            console.log("CORS Blocked Origin:", origin);
             callback(new Error('Not allowed by CORS'));
         }
     },
-    credentials: true
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.get('/', (req, res) => {
