@@ -5,7 +5,6 @@ const {mongoose} = require('mongoose')
 const app = express();
 const cookieParser = require('cookie-parser')
 const path = require('path');
-const helmet = require('helmet');
 
 //database connection
 mongoose.connect(process.env.MONGO_URL)
@@ -16,9 +15,6 @@ mongoose.connect(process.env.MONGO_URL)
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({extended:false}))
-app.use(helmet({
-    contentSecurityPolicy: false,
-}));
 
 // backend/index.js
 
