@@ -1,7 +1,7 @@
 // pages/Login.jsx
 import { useState, useContext } from 'react';
-import axios from 'axios';
-import { UserContext } from '../context/userContext';
+
+import { UserContext, API } from '../context/userContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 
@@ -13,7 +13,7 @@ const Login = () => {
     const loginUser = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/login', data);
+            const response = await API.post('/login', data);
             if (response.data.error) {
                 toast.error(response.data.error);
             } else {

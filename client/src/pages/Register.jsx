@@ -1,6 +1,6 @@
 // pages/Register.jsx
 import { useState } from 'react';
-import axios from 'axios';
+import { API } from '../context/userContext';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ const Register = () => {
     const registerUser = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/register', data);
+            const response = await API.post('/register', data);
             if (response.data.error) {
                 toast.error(response.data.error);
             } else {

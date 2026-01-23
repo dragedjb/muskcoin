@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { createContext, useState, useEffect } from 'react';
 
-// 1. Configure the API instance (Handles switching between Render and Localhost)
-const API = axios.create({
-    baseURL: import.meta.env.VITE_API_URL,
+// Export this so Login.jsx and Register.jsx can use it!
+export const API = axios.create({
+    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000',
     withCredentials: true
 });
 
@@ -15,9 +15,7 @@ export function UserContextProvider({children}) {
     const [ready, setReady] = useState(false);
 
     useEffect(() => {
-        // Only fetch if we don't have a user and aren't ready yet
         if(!user) {
-            // 2. Use the 'API' instance instead of 'axios'
             API.get('/profile')
             .then(({data}) => {
                 setUser(data);
@@ -31,7 +29,6 @@ export function UserContextProvider({children}) {
     }, [user]);
 
     const logout = () => {
-        // You might want to call API.post('/logout') here in the future
         setUser(null);
     };
 

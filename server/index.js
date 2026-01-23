@@ -24,19 +24,23 @@ app.use(helmet({
 
 const allowedOrigins = [
     'http://localhost:5173',           // Keep this for local testing
-    'https://muskcoin-coral.vercel.app' // ADD YOUR NEW LIVE URL HERE
+    'https://muskcoin-coral.vercel.app',
+    'https://muskcoin-git-main-drageds-projects.vercel.app',
+    'https://muskcoin-ajjq2qnzu-drageds-projects.vercel.app/'// ADD YOUR NEW LIVE URL HERE
 ];
 
 app.use(cors({
-    origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps)
+        if (!origin) return callback(null, true);
+        
+        if (allowedOrigins.indexOf(origin) !== -1 || origin.includes(".vercel.app")) {
             callback(null, true);
         } else {
-            console.log("Blocked by CORS:", origin); 
             callback(new Error('Not allowed by CORS'));
         }
     },
-    credentials: true 
+    credentials: true
 }));
 
 app.get('/', (req, res) => {
