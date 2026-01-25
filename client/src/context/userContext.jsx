@@ -30,6 +30,7 @@ export function UserContextProvider({children}) {
 
     const logout = () => {
         setUser(null);
+        setReady(true);
     };
 
     return(

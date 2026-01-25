@@ -16,8 +16,19 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({extended:false}))
 
+// app.use(cors({
+//     origin: "https://muskcoin-coral.vercel.app",
+//     credentials: true
+// }));
+
+// backend/index.js
+const allowedOrigins = [
+    process.env.FRONTEND_URL,
+    'https://muskcoin-coral.vercel.app' 
+];
+
 app.use(cors({
-    origin: "https://muskcoin-coral.vercel.app",
+    origin: allowedOrigins,
     credentials: true
 }));
 

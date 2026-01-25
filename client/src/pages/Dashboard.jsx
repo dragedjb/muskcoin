@@ -6,14 +6,14 @@ const Dashboard = () => {
 
 const promoData = [
   {
-    title: "DOGE LAUNCH",
-    text: "Ride the meme to the moon. New x100 odds!",
+    title: "DODGE GAME",
+    text: "Ride the meme to the moon. New x1.5 odds!",
     imgSrc: "/a3.png", 
     borderColor: "border-blue-400/40"
   },
   {
-    title: "CYBER GIVEAWAY",
-    text: "Win a real Cybertruck with MuskCoin. Enter now!",
+    title: "CRYPTO CRASH ",
+    text: "Double your MuskCoin with crypto crash. Enter now!",
     imgSrc: "/a4.png",
     borderColor: "border-purple-400/40"
   },
@@ -26,10 +26,10 @@ const promoData = [
 ];
 
   const navItems = [
-    { label: 'Wallet', icon: '💰' },
-    { label: 'Withdraw', icon: '💵' },
-    { label: 'Deposit', icon: '🏦' },
-    { label: 'Invite', icon: '🎁' }
+    { label: 'Wallet', icon: '💰',path: '/dashboard' },
+    { label: 'Withdraw', icon: '💵', path: '/withdraw' },
+    { label: 'Deposit', icon: '🏦', path: '/withdraw' },
+    { label: 'Invite', icon: '🎁',path: '/about' }
   ];
 
   const sponsors = [
@@ -54,7 +54,7 @@ const promoData = [
         </div>
         <nav className="flex flex-col gap-10">
           {navItems.map(item => (
-            <button key={item.label} className="group relative flex flex-col items-center">
+            <button key={item.label} to={item.path} className="group relative flex flex-col items-center">
               <span className="text-2xl group-hover:scale-125 transition-transform duration-300 drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]">
                 {item.icon}
               </span>
@@ -104,14 +104,14 @@ const promoData = [
           {/* SLIDING PROMO CARDS */}
           <div className="flex flex-row lg:flex-col gap-4 overflow-x-auto lg:overflow-x-visible scrollbar-hide">
             <div className="min-w-[280px] bg-gradient-to-r from-purple-600 to-blue-600 rounded-[2rem] p-6 border-2 border-white/20 shadow-lg">
-               <h4 className="font-black text-lg italic">2X MULTIPLIER</h4>
-               <p className="text-xs font-bold opacity-80 mb-4">Active on Musk Slots</p>
-               <button className="text-[10px] font-black bg-black/20 px-4 py-1.5 rounded-full border border-white/20">BOOST NOW</button>
+              <h4 className="font-black text-lg italic">2X MULTIPLIER</h4>
+              <p className="text-xs font-bold opacity-80 mb-4">Active on Musk Slots</p>
+              <button className="text-[10px] font-black bg-black/20 px-4 py-1.5 rounded-full border border-white/20">BOOST NOW</button>
             </div>
             <div className="min-w-[280px] bg-gradient-to-r from-orange-500 to-red-600 rounded-[2rem] p-6 border-2 border-white/20 shadow-lg">
-               <h4 className="font-black text-lg italic uppercase">Daily Drop</h4>
-               <p className="text-xs font-bold opacity-80 mb-4">Play Games, get Rewards!</p>
-               <button className="text-[10px] font-black bg-black/20 px-4 py-1.5 rounded-full border border-white/20">REDEEM</button>
+              <h4 className="font-black text-lg italic uppercase">Daily Drop</h4>
+              <p className="text-xs font-bold opacity-80 mb-4">Play Games, get Rewards!</p>
+              <button className="text-[10px] font-black bg-black/20 px-4 py-1.5 rounded-full border border-white/20">REDEEM</button>
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@ const promoData = [
                 <tr className="border-b border-white/5">
                   <td className="px-5 py-3 lg:px-8 lg:py-4 text-blue-400">mik***42</td>
                   <td className="px-5 py-3 lg:px-8 lg:py-4 text-slate-400">Musk Bonus</td>
-                  <td className="px-5 py-3 lg:px-8 lg:py-4 text-left text-green-400">+$3,240.50</td>
+                  <td className="px-5 py-3 lg:px-8 lg:py-4  text-left text-green-400">+$3,240.50</td>
                 </tr>
                 <tr className="border-b border-white/5">
                   <td className="px-5 py-3 lg:px-8 lg:py-4 text-blue-400">dav***09</td>
@@ -232,9 +232,9 @@ const promoData = [
       </main>
 
       {/* MOBILE BOTTOM TABS - Floating, Thick Glowing Glassy Border */}
-      <nav className="lg:hidden fixed bottom-3 left-3 right-3 lg:bottom-6 lg:left-6 lg:right-6 bg-[#0f172a]/80 backdrop-blur-2xl border-[4px] border-blue-500/50 rounded-[2rem] px-5 py-2 lg:px-8 lg:py-4 flex justify-between z-50 shadow-[0_10px_40px_rgba(59,130,246,0.3)] ring-1 ring-white/20">
+      <nav className="lg:hidden fixed bottom-3 left-3 right-3 lg:bottom-6 lg:left-6 lg:right-6 bg-[#0f172a]/80 backdrop-blur-2xl border-[3px] border-blue-500/50 rounded-[2rem] px-5 py-2 lg:px-8 lg:py-4 flex justify-between z-50 shadow-[0_10px_40px_rgba(59,130,246,0.3)] ring-1 ring-white/20">
         {navItems.map(item => (
-          <button key={item.label} className="flex flex-col items-center gap-1">
+          <button key={item.label} to={item.path} className="flex flex-col items-center gap-1">
             <span className="text-2xl drop-shadow-[0_0_8px_rgba(59,130,246,0.6)]">{item.icon}</span>
             <span className="text-[9px] font-black text-slate-500 uppercase tracking-tighter">{item.label}</span>
           </button>

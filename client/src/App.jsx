@@ -8,6 +8,7 @@ import { Toaster } from 'react-hot-toast';
 import { UserContextProvider, UserContext } from './context/userContext';
 import Dashboard from './pages/Dashboard';
 import Withdraw from './pages/Withdraw';
+import About from './pages/About';
 
 const ProtectedRoute = ({ children }) => {
   const { user, ready } = useContext(UserContext);
@@ -30,10 +31,10 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/dashboard' element={<Dashboard />} />
         
-        {/* <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} /> */}
+        <Route path='/dashboard' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path='/withdraw' element={<ProtectedRoute><Withdraw /></ProtectedRoute>} />
+        <Route path='/about' element={<About />} />
       </Routes>
     </UserContextProvider>
   );

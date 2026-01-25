@@ -1,7 +1,6 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom'; // Added useLocation
 import { useContext, useState } from 'react';
-import { UserContext } from '../context/userContext';
-import axios from 'axios';
+import { UserContext, API } from '../context/userContext';
 import { toast } from 'react-hot-toast';
 
 const Navbar = () => {
@@ -14,13 +13,16 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('/logout');
+      await API.post('/logout');
       setUser(null);
       setIsDropdownOpen(false);
       toast.success('Signed out successfully');
       navigate('/login');
-    } catch (error) {
-      console.log(error);
+    } catch (error) {''
+      console.error('Logout error:', error);
+      // Even if the server request fails, clear local state so the user isn't "stuck"
+      setUser(null);
+      navigate('/login');;
     }
   };
 
